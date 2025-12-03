@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <title>Analyse Sante | SAE 1.01 | SAE 1.04 |</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="icon" href="{{ url_for('media', filename='images/entreprise.png') }}" type="image/png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+    <body>
+        <header>
+                <a href="{{ url_for('accueil') }}"><img id="image" src="{{ url_for('media', filename='images/entreprise.png') }}" alt="logo"></a>
+                <div id="entete">
+                    <a href="{ url_for('accueil') }}"><h1>ANALYSE SANTE</h1>	
+                    <p>Mieux Informés, Mieux Soignés</p>
+                </div>
+            </header>
+        
+            <nav class="nav">
+                <ul>
+                    <li class="bnav" ><a href="{{ url_for('accueil') }}">Accueil</a></li> <!-- les points indiquents sur quelle page somme nous--> 
+                    <li class="bnav" ><a href="#">Graphes</a></li>
+                    <li class="bnav"><a href="{{ url_for('apropos') }}">A propos</a></li>
+                </ul>
+            </nav>
+            <form action="{{ url_for('afficher_provencesalpescote') }}" method="get" class="mb-4">
+                <label for="choix">Choisissez quel tableau afficher :</label>
+                <select name="tableau" id="choix" class="form-control w-25 d-inline">
+                    <option value="Demographie" {% if tableau == 'Demographie' %}selected{% endif %}>Demographie</option>
+                    <option value="Honoraires" {% if tableau == 'Honoraires' %}selected{% endif %}>Honoraires</option>
+                    <option value="Prescriptions" {% if tableau == 'Prescriptions' %}selected{% endif %}>Prescriptions</option>
+                </select>
+                <button type="submit" class="btn btn-primary ml-2">Afficher</button>
+            </form>
+            
+            <section>
+                <h2>Tableau sélectionné : {{ tableau }}</h2>
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        {% if tableau == "Demographie" %}
+                            <tr>
+                                <th>Profession</th>
+                                <th>Département</th>
+                                <th>Type Exercice</th>
+                                <th>Effectif</th>
+                            </tr>
+                        {% elif tableau == "Honoraires" %}
+                            <tr>
+                                <th>Profession</th>
+                                <th>Année</th>
+                                <th>Honoraires niv1</th>    
+                                <th>Type honoraires niv1</th>
+                                <th>Honoraires niv2</th>
+                                <th>Type honoraires niv2</th>
+                                <th>Honoraires niv3</th>
+                                <th>Type honoraires niv3</th>
+                                <th>Montant des honoraires</th>
+                                <th>Montant des honoraires moyens</th>
+                            </tr>
+                        {% elif tableau == "Prescriptions" %}
+                            <tr>
+                                <th>Profession</th>
+                                <th>Année</th>
+                                <th>Poste Prescription</th>
+                                <th>Montant total</th>
+                                <th>Montant moyen</th>
+                            </tr>
+                        {% endif %}
+                    </thead>
+                    <tbody>
+                        {% for row in data.itertuples() %}
+                            <tr>
+                                {% for value in row[1:] %}
+                                    <td>{{ value }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </section>     
+            <div class="pagination">     
+                <nav aria-label="Pagination">
+                    <ul class="pagination">
+                        {% if page > 1 %}
+                        <li class="page-item">
+                            <a class="page-link" href="?tableau={{ tableau }}&page={{ page - 1 }}">Précédent</a>
+                        </li>
+                        {% endif %}
+                
+                        {% for p in pages %}
+                        <li class="page-item {% if p == page %}active{% endif %}">
+                            <a class="page-link" href="?tableau={{ tableau }}&page={{ p }}">{{ p }}</a>
+                        </li>
+                        {% endfor %}
+                
+                        {% if page < total_pages %}
+                        <li class="page-item">
+                            <a class="page-link" href="?tableau={{ tableau }}&page={{ page + 1 }}">Suivant</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </nav> 
+            </div> 
+            <footer>
+                <p id="contact">Contactez-nous :</p><br>
+                <div id="nom">
+                    <p class="c">Diyan <br><strong>HETTI</strong></p>
+                    <p class="c">Rayane <br><strong>RAMDANE</strong></p>
+                    <p class="c">Mohamed <br><strong>SIFFER</strong></p>
+                    <p class="c">Sarah <br><strong>LEBIK</strong></p>
+                    <p class="c">Darragh <br><strong>BOYLAN</strong></p>
+                    <p class="c">Kilian <br><strong>Mattias</strong></p>
+                </div>
+                <img src="{{ url_for('media', filename='images/Logo INFO-fond blanc.jpg') }}" alt="logo upec" height="70">   
+            </footer>
+    </body>
+</html>

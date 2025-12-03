@@ -1,0 +1,481 @@
+/**GENERAL**/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(250, 255, 255);
+}
+
+/**nav**/
+
+.nav {
+    z-index: 1;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav ul {
+    list-style: none;
+    text-align: center;
+    align-content: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    background-color: #4C4F50;
+    height: 41px;
+    margin: auto;
+    width: 875px;
+    border-radius: 20px; 
+}
+
+.nav ul a:hover { 
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #ffffff;
+    background: #4C4F50;
+    border-width: 3px;
+    padding: 3px;
+    text-decoration: none; 
+    transition: 0,3s;
+}
+ 
+.nav ul li {
+    display: inline;
+    margin: 0 15px;
+    padding : 10%;
+}
+
+header{
+    background-color: #3879D3;
+    color: white;
+    margin-bottom: 10px;
+    height: 100px;
+    align-content: center;
+    text-align: center;
+}
+
+header img {
+    height: 15%;
+    position:absolute;
+    top: 0; 
+    left: 0; 
+    z-index: 10; 
+}
+
+#entete a {
+    color: white;
+    text-decoration: none;
+    }
+
+#entete h1{
+    font-family:jost;
+    font-size: 50px;
+}
+
+#entete p{
+    font-family:jost;
+    font-size: 15px;
+}
+
+#entete {
+    position: sticky;
+}
+
+/**INDEX**/
+
+.presentation h2{
+    font-family:jost;
+    font-size: 40px;
+    text-align: justify;
+    padding-top:140px;   
+    padding-left: 50px;
+    color: #000000;
+}
+
+.presentation p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin-bottom: 200px;
+    text-align: justify;
+    padding-top:30px;   
+    padding-left: 50px;
+    padding-right: 600px;
+    color: #000000;
+}
+
+.presentation img{
+    width: 100%;
+    margin-top: -51px;
+    z-index: -1;
+    position: absolute; 
+}
+
+.france{ /** le bloc qui contient la carte et le nom des régions**/
+    display: flex;
+    margin-top: -100px;
+}
+
+.titre_carte{
+    font-family: jost;
+    font-size: 30px;
+    text-align: center;
+}
+
+.selection_region{
+    margin: 210px auto;
+    background-color: #4C4F50;
+    border-radius: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.selection_region h4{
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-family: jost;
+    text-align: center;
+    color:#ffffff;
+    text-decoration: underline; 
+}
+
+.selection_region p{
+    font-size: 18px;
+    margin-bottom: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none; 
+}
+.selection_region a{
+    text-decoration: none; 
+}
+
+section {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    font-size: 120%;
+}
+
+code {  
+    font-size: 125%;
+}
+
+.carte-france{
+    width: 50%;
+    padding-top: 65px;
+    margin-left: 40px ;
+    display: inline-block;
+    margin-top:175px;
+}
+
+path {
+    fill: grey;
+}
+
+/* CSS POUR REGION */
+
+.mb-4{
+    margin-top: 3%;
+    padding-left: 2%;
+}
+
+.pagination{
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+
+.pagination ul {
+   font-size: 15px;
+}
+
+.chosirtab{
+    font-size: 20px;
+}
+
+/* Guadeloupe */
+.region_region-01:hover path, .region_region-01:hover {
+    fill: #FF6347; /* Tomate, couleur vive pour la Guadeloupe */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #FF6347;
+    background: #FF6347;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+
+/* Martinique */
+.region_region-02:hover path, .region_region-02:hover {
+    fill: #FF8C00; /* Orange vif pour la Martinique */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #FF8C00;
+    background: #FF8C00;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Guyane */
+.region_region-03:hover path, .region_region-03:hover {
+    fill: #228B22; /* Vert forêt pour la Guyane */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #228B22;
+    background: #228B22;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Réunion */
+.region_region-04:hover path, .region_region-04:hover {
+    fill: #FFD700; /* Jaune or pour La Réunion */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #FFD700;
+    background: #FFD700;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Mayotte */
+.region_region-06:hover path, .region_region-06:hover {
+    fill: #00BFFF; /* Bleu ciel pour Mayotte */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #00BFFF;
+    background: #00BFFF;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Île-de-France */
+.region_region-11:hover path, .region_region-11:hover {
+    fill: #1E90FF; /* Bleu Dodger pour l'Île-de-France */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #1E90FF;
+    background: #1E90FF;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Centre-Val de Loire */
+.region_region-24:hover path, .region_region-24:hover {
+    fill: #8A2BE2; /* Violet pour le Centre-Val de Loire */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #8A2BE2;
+    background: #8A2BE2;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Bourgogne-Franche-Comté */
+.region_region-27:hover path, .region_region-27:hover {
+    fill: #800000; /* Rouge foncé pour Bourgogne-Franche-Comté */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #800000;
+    background: #800000;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Normandie */
+.region_region-28:hover path, .region_region-28:hover {
+    fill: #2E8B57; /* Vert forêt pour Normandie */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #2E8B57;
+    background: #2E8B57;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Hauts-de-France */
+.region_region-32:hover path, .region_region-32:hover {
+    fill: #4682B4; /* Bleu acier pour Hauts-de-France */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #4682B4;
+    background: #4682B4;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Grand Est */
+.region_region-44:hover path, .region_region-44:hover {
+    fill: #B22222; /* Rouge brique pour Grand Est */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #B22222;
+    background: #B22222;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Pays de la Loire */
+.region_region-52:hover path, .region_region-52:hover {
+    fill: #32CD32; /* Vert lime pour Pays de la Loire */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #32CD32;
+    background: #32CD32;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Bretagne */
+.region_region-53:hover path, .region_region-53:hover {
+    fill: #00008B; /* Bleu marine pour Bretagne */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #00008B;
+    background: #00008B;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Nouvelle-Aquitaine */
+.region_region-75:hover path, .region_region-75:hover {
+    fill: #A52A2A; /* Brun pour Nouvelle-Aquitaine */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #A52A2A;
+    background: #A52A2A;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Occitanie */
+.region_region-76:hover path, .region_region-76:hover {
+    fill: #FF4500; /* Orange brûlé pour Occitanie */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #FF4500;
+    background: #FF4500;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Auvergne-Rhône-Alpes */
+.region_region-84:hover path, .region_region-84:hover {
+    fill: #DC143C; /* Rouge cramoisi pour Auvergne-Rhône-Alpes */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #DC143C;
+    background: #DC143C;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Provence-Alpes-Côte d'Azur */
+.region_region-93:hover path, .region_region-93:hover {
+    fill: #FF69B4; /* Rose bonbon pour Provence-Alpes-Côte d'Azur */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #FF69B4;
+    background: #FF69B4;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/* Corse */
+.region_region-94:hover path, .region_region-94:hover {
+    fill: #FF0000; /* Rouge vif pour Corse */
+    color: #ffffff;
+    border-radius: 100px;
+    border: solid;
+    border-color: #FF0000;
+    background: #FF0000;
+    padding: 3px 20px;
+    transition: 0.3s;
+}
+
+/**A propos**/
+
+.bloc, .bloc2{
+    background-color: white;
+    border: 2px solid rgb(216, 214, 214);  
+    text-align: center;
+    padding: 20px; 
+    margin: 40px 150px auto; 
+    border-radius:90px;
+}
+
+.bloc h2, .bloc p, .bloc2 h2, .bloc p {
+    padding: 1%;
+}
+
+.bloc h2, .bloc2 h2{
+    font-size: 18px;
+    font-weight: normal;
+    font-family: jost;
+}
+
+.bloc img, .bloc2 img {
+    padding: 5px; 
+    margin: 10px; 
+}
+
+/** Footer **/
+
+footer {
+    background-color: #4C4F50;
+    color: white; 
+}
+
+footer img{
+    width: 350px;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+#contact {
+  text-align: center;
+  font-family: jost;
+  font-size: 20px;  
+}
+
+#nom{
+    padding-left: 500px; 
+    position:absolute;
+}
+
+.c{
+    padding-top: 65px;
+    margin-left: 40px ;
+    display: inline-block;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    text-align:center;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="fr">
+    <title>Analyse Sante | SAE 1.01 | SAE 1.04 |</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="icon" href="{{ url_for('media', filename='images/entreprise.png') }}" type="image/png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+    <body>
+        <header>
+        <a href="{{ url_for('accueil') }}"><img id="image" src="{{ url_for('media', filename='images/entreprise.png') }}" alt="logo"></a>
+            <div id="entete">
+                <a href="{{ url_for('accueil') }}"><h1>ANALYSE SANTE</h1>	
+                <p>Mieux Informés, Mieux Soignés</p>
+            </div>
+        </header>
+    
+        <nav  class="nav">
+            <ul>
+                <li class="actuelle" ><a href="{{ url_for('accueil') }}">Accueil</a></li>
+                <li class="bnav" ><a href="#l">Graphes</a></li>
+                <li class="bnav"><a href="{{ url_for('apropos') }}">• A propos •</a></li>  <!-- les points indiquents sur quelle page somme nous--> 
+            </ul>
+        </nav>
+
+        <section>
+            <div class="bloc">
+                <h2><strong>Base de donnée initiale</strong><h2>
+                <p>Ce diagramme entité-relationnel (ERD) représente une base de données
+                relative à la santé et aux professions médicales. 
+                Il est composé de plusieurs entités interconnectées et leurs relations. 
+                </p>
+                <img id="carte-mentale" src="{{ url_for('media', filename='images/base.jpg') }}" width="700"> 
+            </div>
+            <div class="bloc2">
+                <h2><strong>Diagramme Entité-Relationnel</strong><h2>
+                <p>Ce schéma représente une base de données organisée en trois parties principales :
+                Démographie, Prescriptions, et Honoraires. Elle permet d’analyser les pratiques 
+                professionnelles des métiers de la santé, les montants des prescriptions, ainsi que les revenus des professionnels, 
+                tout en offrant une vue détaillée par région, département et type d’exercice.
+                </p>
+                <img id="Dbeaver" src="{{ url_for('media', filename='images/diagramme.png') }}"  width="700"> 
+            </div>
+        </section>
+        
+        <footer>
+            <p id="contact">Contactez-nous :</p><br>
+            <div id="nom">
+                <p class="c">Diyan <br><strong>HETTI</strong></p>
+                <p class="c">Rayane <br><strong>RAMDANE</strong></p>
+                <p class="c">Mohamed <br><strong>SIFFER</strong></p>
+                <p class="c">Sarah <br><strong>LEBIK</strong></p>
+                <p class="c">Darragh <br><strong>BOYLAN</strong></p>
+                <p class="c">Kilian <br><strong>Mattias</strong></p>
+            </div>
+            <img src="{{ url_for('media', filename='images/Logo INFO-fond blanc.jpg') }}" alt="logo upec" height="70">   
+        </footer>
+    </body>
+</html>
+
