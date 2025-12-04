@@ -1,2 +1,2 @@
 # Projet-de-groupe-Application-MVC-avec-BD
-Projet
+Ce projet, réalisé en groupe en première année de BUT Informatique, consiste en une application web développée en HTML, CSS et Python suivant l’architecture MVC (Modèle-Vue-Contrôleur). L’objectif était de récupérer des données issues de l’Open Data du site Ameli, de les traiter en Python, puis de les visualiser à travers une interface web claire et interactive. Ce projet nous a permis de travailler sur l’exploitation de données réelles, la structuration d’un projet web, ainsi que le travail collaboratif via GitHub.
